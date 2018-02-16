@@ -67,6 +67,9 @@ public class AdminArticulo extends HttpServlet {
 			case "mostrar":
 				mostrar(request, response);
 				break;
+			case "buscar":
+				buscar(request, response);
+				break;
 			case "showedit":
 				showEditar(request, response);
 				break;	
@@ -83,6 +86,12 @@ public class AdminArticulo extends HttpServlet {
 			e.getStackTrace();
 		}
 		
+		
+	}
+
+	private void buscar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher= request.getRequestDispatcher("/vista/buscar.jsp");
+		dispatcher.forward(request, response);
 		
 	}
 

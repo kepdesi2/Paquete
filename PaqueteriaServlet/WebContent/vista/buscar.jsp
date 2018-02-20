@@ -60,9 +60,9 @@
     </style>
   </head>
   <body>
-  	<form action="mostrar">
-	  	<input id="pac-input" class="controls" type="text" placeholder="Search Box"><br>
-	    <input id="pac-input2" class="controls" type="text" placeholder="Search Box"><br>
+  	<form action="adminArticulo?action=mostrar2" method="post">
+	  	<input id="pac-input" class="controls" type="text" placeholder="Search Box" name="origen"><br>
+	    <input id="pac-input2" class="controls" type="text" placeholder="Search Box" name="destino"><br>
 	    <input type="submit" value="enviar">
   	</form>
     <a href="adminArticulo?action=mostrar">Mostrar</a>

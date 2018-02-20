@@ -29,6 +29,8 @@ public class ArticuloDAO {
 	// insertar artículo
 	@SuppressWarnings("null")
 	public boolean insertar(Articulo articulo) throws SQLException {
+		
+		System.out.println("prueba1");
 		String sql = "INSERT INTO articulos VALUES (NULL, ?, ?,?,?,?,?,?)";
 		con.conectar();
 		connection = con.getJdbcConnection();
@@ -37,7 +39,7 @@ public class ArticuloDAO {
 		statement.setString(1, articulo.getOrigen());
 		statement.setString(2, articulo.getDestino());
 		statement.setString(3, articulo.getPaquete());
-		statement.setDate(4, (Date) articulo.getFecha());
+		statement.setDate(4, null);
 		statement.setString(5, articulo.getRemitente());
 		statement.setString(6, articulo.getTransportista());
 		statement.setDouble(7, articulo.getPrecio());
@@ -58,12 +60,6 @@ public class ArticuloDAO {
 		Statement statement = connection.createStatement();
 		ResultSet resulSet = statement.executeQuery(sql);
 
-		
-		
-
-		
-		
-		
 		while (resulSet.next()) {
 			int id = resulSet.getInt("id");
 			String origen = resulSet.getString("origen");
@@ -138,4 +134,33 @@ public class ArticuloDAO {
 
 		return rowEliminar;
 	}
+	
+	public List<Articulo> listarArticulos2(String ori, String dest) throws SQLException {
+		
+		System.out.println(ori);
+		System.out.println(dest);
+		
+		List<Articulo> listaArticulos = new ArrayList<Articulo>();
+		String sql = "SELECT * FROM articulos WHERE origen = '"+ori+"' and destino ='"+dest+"';";
+		con.conectar();
+		connection = con.getJdbcConnection();
+		Statement statement = connection.createStatement();
+		ResultSet resulSet = statement.executeQuery(sql);
+		
+		while (resulSet.next()) {
+			int id = resulSet.getInt("id");
+			String origen = resulSet.getString("origen");
+			String destino = resulSet.getString("destino");
+			String paquete = resulSet.getString("paquete");
+			Date fecha = resulSet.getDate("fecha");
+			String remitente = resulSet.getString("remitente");
+			String transportista = resulSet.getString("transportista");
+			Double precio = resulSet.getDouble("precio");
+			Articulo articulo = new Articulo(id, origen, destino, paquete, fecha, remitente, transportista, precio);
+			listaArticulos.add(articulo);
+		}
+		con.desconectar();
+		return listaArticulos;
+	}
+	
 }

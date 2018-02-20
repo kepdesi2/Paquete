@@ -27,7 +27,7 @@
 		 <td>remitente</td>
 		 <td>transportista</td>
 		 <td>precio</td>
-		 <td colspan=2>ACCIONES</td>
+		 <td>mapa</td>
 		</tr>
 		<c:forEach var="articulo" items="${lista}">
 			<tr>
@@ -39,8 +39,10 @@
 				<td><c:out value="${articulo.remitente}"/></td>
 				<td><c:out value="${articulo.transportista}"/></td>
 				<td><c:out value="${articulo.precio}"/></td>
-				<td><a href="adminArticulo?action=showedit&id=<c:out value="${articulo.id}" />">Editar</a></td>
-				<td><a href="adminArticulo?action=eliminar&id=<c:out value="${articulo.id}"/>">Eliminar</a> </td>				
+				<td><a href="adminArticulo?action=map
+						&origen=<c:out value="${articulo.origen}"/>
+						&destino=<c:out value="${articulo.destino}"/>
+						">Ver en el Mapa</a></td>	
 			</tr>
 		</c:forEach>
 	</table>

@@ -18,8 +18,8 @@ import com.ecodeup.articulos.model.Articulo;
 /**
  * Servlet implementation class AdminArticulo
  */
-@WebServlet("/adminArticulo")
-public class AdminArticulo extends HttpServlet {
+@WebServlet("/MostrarController")
+public class MostrarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ArticuloDAO articuloDAO;
 
@@ -38,7 +38,7 @@ public class AdminArticulo extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public AdminArticulo() {
+	public MostrarController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -70,9 +70,6 @@ public class AdminArticulo extends HttpServlet {
 			case "mostrar":
 				mostrar(request, response);
 				break;
-			case "mostrar2":
-				mostrar2(request, response);
-				break;
 			case "buscar":
 				buscar(request, response);
 				break;
@@ -99,24 +96,6 @@ public class AdminArticulo extends HttpServlet {
 		
 	}
 
-	private void mostrar2(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException , ServletException{
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/vista/mostrar.jsp");
-		List<Articulo> listaArticulos = null;
-		
-		String origen = request.getParameter("origen");
-		String destino = request.getParameter("destino");
-		
-		
-		try {
-			listaArticulos = articuloDAO.listarArticulos2(origen, destino);
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-		request.setAttribute("lista", listaArticulos);
-		dispatcher.forward(request, response);
-	}	
-
 	private void twitter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher= request.getRequestDispatcher("/vista/twitter.jsp");
 		dispatcher.forward(request, response);
@@ -141,8 +120,26 @@ public class AdminArticulo extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/vista/mostrar.jsp");
+		List<Articulo> listaArticulos = null;
+		
+		String origen = request.getParameter("origen");
+		String destino = request.getParameter("destino");
+		String id = request.getParameter("id");
+		System.out.println(id);
+		
+		if(id!=null) {
+			
+		}
+		
+		try {
+			listaArticulos = articuloDAO.listarArticulos2(origen, destino);
+		} catch (SQLException e) {
 
+			e.printStackTrace();
+		}
+		request.setAttribute("lista", listaArticulos);
+		dispatcher.forward(request, response);
 	}
 	
 	private void index (HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{

@@ -10,7 +10,7 @@
 	<h1>Administrar Artículos</h1>
 	<table border="1" width="50%" align="center">
 		<tr>
-			<td align="center"><a href="adminArticulo?action=nuevo">Llevamelo</a></td>			
+			<td align="center"><a href="adminArticulo?action=twitter">Llevamelo</a></td>			
 		</tr>
 		<tr>
 			<td align="center"><a href="adminArticulo?action=buscar">Te lo llevo</a></td>

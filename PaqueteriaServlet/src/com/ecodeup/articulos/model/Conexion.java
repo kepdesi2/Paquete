@@ -15,6 +15,7 @@ public class Conexion {
     private String jdbcUsername;
     private String jdbcPassword;
     
+    
     public Conexion(String jdbcURL, String jdbcUsername, String jdbcPassword) {
 		this.jdbcURL = jdbcURL;
 		this.jdbcUsername = jdbcUsername;

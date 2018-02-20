@@ -60,6 +60,7 @@
     </style>
   </head>
   <body>
+  
   	<form action="adminArticulo?action=mostrar2" method="post">
 	  	<input id="pac-input" class="controls" type="text" placeholder="Search Box" name="origen"><br>
 	    <input id="pac-input2" class="controls" type="text" placeholder="Search Box" name="destino"><br>

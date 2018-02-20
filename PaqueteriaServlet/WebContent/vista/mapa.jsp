@@ -73,6 +73,7 @@
     </div>
     <div id="directions-panel"></div>
     </div>
+    
     <script>
       function initMap() {
         var directionsService = new google.maps.DirectionsService;

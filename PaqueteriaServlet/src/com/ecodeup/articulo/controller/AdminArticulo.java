@@ -107,6 +107,7 @@ public class AdminArticulo extends HttpServlet {
 		String destino = request.getParameter("destino");
 		
 		
+		
 		try {
 			listaArticulos = articuloDAO.listarArticulos2(origen, destino);
 		} catch (SQLException e) {

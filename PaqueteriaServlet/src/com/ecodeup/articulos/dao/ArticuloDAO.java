@@ -147,6 +147,7 @@ public class ArticuloDAO {
 		Statement statement = connection.createStatement();
 		ResultSet resulSet = statement.executeQuery(sql);
 		
+		
 		while (resulSet.next()) {
 			int id = resulSet.getInt("id");
 			String origen = resulSet.getString("origen");

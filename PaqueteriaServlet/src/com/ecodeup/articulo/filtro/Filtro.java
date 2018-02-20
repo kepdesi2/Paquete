@@ -27,6 +27,7 @@ public class Filtro implements Filter {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	/**
 	 * @see Filter#destroy()
 	 */

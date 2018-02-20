@@ -11,6 +11,7 @@
 <h1>Actualizar Artículo</h1>
 	<form action="adminArticulo?action=editar" method="post" >
 		<table>
+		
 			<tr>
 				<td><label>Id</label></td>
 				<td><input type="text" name="id" value="<c:out value="${articulo.id}"></c:out>" ></td>

@@ -17,6 +17,7 @@ public class Articulo {
 	private String transportista;
 	private double precio;
 	
+	
 	public Articulo(int id, String origen, String destino, String paquete, Date fecha, String remitente, String transportista,  double precio) {
 		this.id = id;
 		this.origen = origen;

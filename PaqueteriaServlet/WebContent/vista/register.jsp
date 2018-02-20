@@ -22,6 +22,7 @@
 			<td>destino:</a></td>		
 			<td><input type="text" name="destino"/></td>	
 		</tr>
+		
 		<tr>
 			<td>paquete:</a></td>		
 			<td><input type="text" name="paquete"/></td>	
